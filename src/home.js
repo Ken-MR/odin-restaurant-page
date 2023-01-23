@@ -4,36 +4,68 @@ export default function createHome () {
   console.log('I am creating the home page!');
 
   /*
-        will be changed to look at content ID, restricted to body for testing purposes
-        generate the following inside body:
-        <div id="body">
-            <div id="header">
-                <img src="../src/plate.png">
-                <h1>Ken's Kitchen</h1>
-                <img src="../src/plate.png">
-            </div>
-            <div id="info">
-                <div>Description</div>
-                <div>Hours</div>
-                <div>Location</div>
-            </div>
+    <div id="content">
+      <div id="nav">
+        <div>Home</div>
+        <div>Menu</div>
+        <div>Contact</div>
+      </div>
+      <div id="body">
+        <div id="header">
+          <img src="../src/plate.png">
+          <h1>Ken's Kitchen</h1>
+          <img src="../src/plate.png">
         </div>
+        <div id="info">
+          <div>Description</div>
+          <div>Hours</div>
+          <div>Location</div>
+        </div>
+      </div>
+    </div>
   */
 
+  const content = document.getElementById('content');
+  const body = document.createElement('div');
+  const nav = document.createElement('div');
+
+  body.setAttribute('id', 'body');
+  nav.setAttribute('id', 'nav');
+
+  content.appendChild(nav);
+  content.appendChild(body);
+
+  // create home page navigation bar
+  const homeTab = document.createElement('div');
+  const menuTab = document.createElement('div');
+  const contactTab = document.createElement('div');
+
+  const homeTabText = document.createTextNode('Home');
+  const menuTabText = document.createTextNode('Menu');
+  const contactTabText = document.createTextNode('Contact');
+
+  homeTab.appendChild(homeTabText);
+  menuTab.appendChild(menuTabText);
+  contactTab.appendChild(contactTabText);
+
+  nav.appendChild(homeTab);
+  nav.appendChild(menuTab);
+  nav.appendChild(contactTab);
+
+  // create header for the home page
   const icon = new Image();
   const icon2 = new Image();
   icon.src = plate;
   icon2.src = plate;
-        
-  const content = document.getElementById('body');
 
   const header = document.createElement('div');
   const h1 = document.createElement('h1');
   const headerText = document.createTextNode("Ken's Kitchen");
+
   h1.appendChild(headerText);
   header.setAttribute('id', 'header');
   header.appendChild(icon);
   header.appendChild(h1);
   header.appendChild(icon2);
-  content.appendChild(header);
+  body.appendChild(header);
 }

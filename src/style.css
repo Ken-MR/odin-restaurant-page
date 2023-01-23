@@ -13,9 +13,9 @@ img {
 }
 
 #nav, #body {
-    gap: 16px;
+    gap: 20px;
 }
 
 #content, #header, #info {
-    gap: 24px;
+    gap: 30px;
 }
