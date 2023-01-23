@@ -1,0 +1,21 @@
+img {
+    width: 200px;
+}
+
+#content, #body, #nav, #header, #info {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#content, #body, #info {
+    flex-direction: column;
+}
+
+#nav, #body {
+    gap: 16px;
+}
+
+#content, #header, #info {
+    gap: 24px;
+}
