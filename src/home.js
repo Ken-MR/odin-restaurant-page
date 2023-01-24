@@ -67,5 +67,27 @@ export default function createHome () {
   header.appendChild(icon);
   header.appendChild(h1);
   header.appendChild(icon2);
+
+  // create information section for the home page
+  const info = document.createElement('div');
+  info.setAttribute('id', 'info');
+
+  const description = document.createElement('div');
+  const hours = document.createElement('div');
+  const location = document.createElement('div');
+
+  const descriptionText = document.createTextNode('Description');
+  const hoursText = document.createTextNode('Hours');
+  const locationText = document.createTextNode('Location');
+
+  description.appendChild(descriptionText);
+  hours.appendChild(hoursText);
+  location.appendChild(locationText);
+
+  info.appendChild(description);
+  info.appendChild(hours);
+  info.appendChild(location);
+
   body.appendChild(header);
+  body.appendChild(info);
 }

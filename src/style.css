@@ -12,10 +12,18 @@ img {
     flex-direction: column;
 }
 
-#nav, #body {
-    gap: 20px;
+#nav {
+    gap: 24px;
 }
 
-#content, #header, #info {
+#body {
+    gap: 50px;
+}
+
+#content, #header {
     gap: 30px;
+}
+
+#info {
+    gap: 75px;
 }
