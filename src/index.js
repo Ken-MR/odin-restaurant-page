@@ -2,6 +2,8 @@ console.log('I am a console log statement!');
 
 import './style.css';
 import createHome from './home';
+import createMenu from './menu';
+import createContact from './contact';
 
 // window.onload is used to make sure page loads before trying to generate elements
 window.onload = function() {
@@ -26,7 +28,6 @@ function generateNavigation (tab) {
         homeButton.addEventListener('click', () => {
             erasePage();
             createHome();
-            console.log('I made the home page!');
             generateNavigation('home');
         });
     }
@@ -34,9 +35,7 @@ function generateNavigation (tab) {
     if (tab !== 'menu') {
         menuButton.addEventListener('click', () => {
             erasePage();
-            // createMenu(); using createHome for testing purposes
-            createHome();
-            console.log('I made the menu page!');
+            createMenu();
             generateNavigation('menu');
         });
     }
@@ -44,9 +43,7 @@ function generateNavigation (tab) {
     if (tab !== 'contact') {
         contactButton.addEventListener('click', () => {
             erasePage();
-            // createContact(); using createHome for testing purposes
-            createHome();
-            console.log('I made the contact page!');
+            createContact();
             generateNavigation('contact');
         });
     }
