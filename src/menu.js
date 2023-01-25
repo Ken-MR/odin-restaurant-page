@@ -55,25 +55,25 @@ export default function createMenu () {
   header.appendChild(h1);
   header.appendChild(icon2);
 
-  // create information section for the home page
+  // create information section for the menu page
   const info = document.createElement('div');
   info.setAttribute('id', 'info');
 
-  const description = document.createElement('div');
-  const hours = document.createElement('div');
-  const location = document.createElement('div');
+  const app = document.createElement('h2');
+  const entree = document.createElement('h2');
+  const drink = document.createElement('h2');
 
-  const descriptionText = document.createTextNode('Description');
-  const hoursText = document.createTextNode('Hours');
-  const locationText = document.createTextNode('Location');
+  const appText = document.createTextNode('Appetizers');
+  const entreeText = document.createTextNode('Entrees');
+  const drinkText = document.createTextNode('Drinks');
 
-  description.appendChild(descriptionText);
-  hours.appendChild(hoursText);
-  location.appendChild(locationText);
+  app.appendChild(appText);
+  entree.appendChild(entreeText);
+  drink.appendChild(drinkText);
 
-  info.appendChild(description);
-  info.appendChild(hours);
-  info.appendChild(location);
+  info.appendChild(app);
+  info.appendChild(entree);
+  info.appendChild(drink);
 
   body.appendChild(header);
   body.appendChild(info);
