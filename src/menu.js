@@ -68,8 +68,11 @@ export default function createMenu () {
   const drinkText = document.createTextNode('Drinks');
 
   app.appendChild(appText);
+  app.classList.add('menu_header');
   entree.appendChild(entreeText);
+  entree.classList.add('menu_header');
   drink.appendChild(drinkText);
+  drink.classList.add('menu_header');
 
   /* Create Menu Item Cards */
 
