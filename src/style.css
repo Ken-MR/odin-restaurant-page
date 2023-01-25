@@ -13,7 +13,7 @@ img {
 }
 
 #nav {
-    gap: 24px;
+    gap: 25px;
 }
 
 #body {
@@ -26,4 +26,16 @@ img {
 
 #info {
     gap: 75px;
+}
+
+.nav_button {
+    width: 80px;
+    height: 30px;
+    border: 1px solid #C0C0C0;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
 }

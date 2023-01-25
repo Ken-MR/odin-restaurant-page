@@ -44,6 +44,15 @@ export default function createHome () {
   const menuTabText = document.createTextNode('Menu');
   const contactTabText = document.createTextNode('Contact');
 
+  homeTab.setAttribute('id', 'home');
+  homeTab.classList.add('nav_button');
+
+  menuTab.setAttribute('id', 'menu');
+  menuTab.classList.add('nav_button');
+
+  contactTab.setAttribute('id', 'contact');
+  contactTab.classList.add('nav_button');
+
   homeTab.appendChild(homeTabText);
   menuTab.appendChild(menuTabText);
   contactTab.appendChild(contactTabText);
