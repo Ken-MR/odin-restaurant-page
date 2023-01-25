@@ -71,6 +71,8 @@ export default function createMenu () {
   entree.appendChild(entreeText);
   drink.appendChild(drinkText);
 
+  /* Create Menu Item Cards */
+
   const menuItem = document.createElement('div');
   menuItem.classList.add('menu-item');
 
@@ -82,18 +84,23 @@ export default function createMenu () {
   const descriptionText = document.createTextNode('Placeholder');
   description.appendChild(descriptionText);
 
+  const price_image = document.createElement('div');
   const price = document.createElement('h3');
   const priceText = document.createTextNode('$X');
   price.appendChild(priceText);
 
   const menuImage = new Image();
   menuImage.src = plate;
-  price.appendChild(menuImage);
 
+  price_image.classList.add('price-image');
+  price_image.appendChild(price);
+  price_image.appendChild(menuImage);
 
   menuItem.appendChild(itemName);
   menuItem.appendChild(description);
-  menuItem.appendChild(price);
+  menuItem.appendChild(price_image);
+
+  /* End Menu Item Cards */
 
   info.appendChild(app);
   info.appendChild(menuItem);
