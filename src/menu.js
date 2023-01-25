@@ -71,7 +71,32 @@ export default function createMenu () {
   entree.appendChild(entreeText);
   drink.appendChild(drinkText);
 
+  const menuItem = document.createElement('div');
+  menuItem.classList.add('menu-item');
+
+  const itemName = document.createElement('h3');
+  const itemNameText = document.createTextNode('Placeholder');
+  itemName.appendChild(itemNameText);
+
+  const description = document.createElement('p');
+  const descriptionText = document.createTextNode('Placeholder');
+  description.appendChild(descriptionText);
+
+  const price = document.createElement('h3');
+  const priceText = document.createTextNode('$X');
+  price.appendChild(priceText);
+
+  const menuImage = new Image();
+  menuImage.src = plate;
+  price.appendChild(menuImage);
+
+
+  menuItem.appendChild(itemName);
+  menuItem.appendChild(description);
+  menuItem.appendChild(price);
+
   info.appendChild(app);
+  info.appendChild(menuItem);
   info.appendChild(entree);
   info.appendChild(drink);
 
