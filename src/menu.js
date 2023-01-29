@@ -1,4 +1,15 @@
-import plate from './plate.png';
+import plate from './images/plate.png';
+import bacon from '.images/bacon.png'
+import sandwich from './images/breakfast-sandwich.png'
+import eggs from './images/eggs.png'
+import english from './images/english-breakfast.png'
+import lemon from './images/lemon-lime.png'
+import milkshake from './images/milkshake.png'
+import oatmeal from './images/oatmeal.png'
+import orange from './images/orange-juice.png'
+import pancakes from './images/pancakes.png'
+import valentine from './images/valentine-toast.png'
+import waffles from './images/waffles.png'
 
 export default function createMenu () {
   console.log('I am creating the menu page!');
@@ -59,54 +70,57 @@ export default function createMenu () {
   const info = document.createElement('div');
   info.setAttribute('id', 'info');
 
-  const app = document.createElement('h2');
+  const side = document.createElement('h2');
   const entree = document.createElement('h2');
   const drink = document.createElement('h2');
 
-  const appText = document.createTextNode('Appetizers');
+  const sideText = document.createTextNode('Sides');
   const entreeText = document.createTextNode('Entrees');
   const drinkText = document.createTextNode('Drinks');
 
-  app.appendChild(appText);
-  app.classList.add('menu_header');
+  side.appendChild(appText);
+  side.classList.add('menu_header');
   entree.appendChild(entreeText);
   entree.classList.add('menu_header');
   drink.appendChild(drinkText);
   drink.classList.add('menu_header');
 
-  /* Create Menu Item Cards */
+  /* create menu item cards */
 
-  const menuItem = document.createElement('div');
-  menuItem.classList.add('menu-item');
+  // bacon menu item
 
-  const itemName = document.createElement('h3');
-  const itemNameText = document.createTextNode('Placeholder');
+  const bacon_card = document.createElement('div');
+  bacon_card.classList.add('menu-item');
+
+  let itemName = document.createElement('h3');
+  let itemNameText = document.createTextNode('Bacon');
   itemName.appendChild(itemNameText);
 
-  const description = document.createElement('p');
-  const descriptionText = document.createTextNode('Placeholder');
+  let description = document.createElement('p');
+  let descriptionText = 
+  document.createTextNode('Two delicious skillet cooked slices; add two more for an extra $1.5');
   description.appendChild(descriptionText);
 
-  const price_image = document.createElement('div');
-  const price = document.createElement('h3');
-  const priceText = document.createTextNode('$X');
+  let price_image = document.createElement('div');
+  let price = document.createElement('h3');
+  let priceText = document.createTextNode('$2');
   price.appendChild(priceText);
 
-  const menuImage = new Image();
-  menuImage.src = plate;
+  const baconImage = new Image();
+  baconImage.src = bacon;
 
   price_image.classList.add('price-image');
   price_image.appendChild(price);
-  price_image.appendChild(menuImage);
+  price_image.appendChild(baconImage);
 
-  menuItem.appendChild(itemName);
-  menuItem.appendChild(description);
-  menuItem.appendChild(price_image);
+  bacon_card.appendChild(itemName);
+  bacon_card.appendChild(description);
+  bacon_card.appendChild(price_image);
 
   /* End Menu Item Cards */
 
-  info.appendChild(app);
-  info.appendChild(menuItem);
+  info.appendChild(side);
+  info.appendChild(bacon_card);
   info.appendChild(entree);
   info.appendChild(drink);
 

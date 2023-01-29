@@ -1,4 +1,4 @@
-import plate from './plate.png';
+import plate from './images/plate.png';
 
 export default function createContact () {
   console.log('I am creating the contact page!');
