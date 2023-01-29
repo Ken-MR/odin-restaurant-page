@@ -27,6 +27,7 @@ img {
     width: 400px;
     text-align: center;
 }
+
 #body {
     gap: 50px;
     width: 80%;
@@ -77,4 +78,8 @@ img {
 h1 {
     margin: 0;
     padding: 0;
+}
+
+.current_tab {
+    background-color: slategray;
 }

@@ -48,4 +48,14 @@ function generateNavigation (tab) {
         });
     }
 
+    if (tab === 'home') {
+        homeButton.classList.add('current_tab');
+    }
+    else if (tab === 'menu') {
+        menuButton.classList.add('current_tab');
+    }
+    else {
+        contactButton.classList.add('current_tab');
+    }
+
 }
