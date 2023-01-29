@@ -1,5 +1,5 @@
 import plate from './images/plate.png';
-import bacon from '.images/bacon.png'
+import bacon from './images/bacon.png'
 import sandwich from './images/breakfast-sandwich.png'
 import eggs from './images/eggs.png'
 import english from './images/english-breakfast.png'
@@ -78,7 +78,7 @@ export default function createMenu () {
   const entreeText = document.createTextNode('Entrees');
   const drinkText = document.createTextNode('Drinks');
 
-  side.appendChild(appText);
+  side.appendChild(sideText);
   side.classList.add('menu_header');
   entree.appendChild(entreeText);
   entree.classList.add('menu_header');
