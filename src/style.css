@@ -1,5 +1,6 @@
 img {
     width: 150px;
+    height: 150px;
 }
 
 #content, #body, #nav, #header, #info {
@@ -58,7 +59,7 @@ img {
 
 .menu-item {
     width: 300px;
-    height: 350px;
+    height: 300px;
     border: 5px solid #C0C0C0;
     display: flex;
     flex-direction: column;
@@ -73,6 +74,11 @@ img {
     display: flex;
     align-items: bottom;
     justify-content: space-between;
+}
+
+.price-image > img {
+    height: 200px;
+    width: 250px;
 }
 
 h1 {

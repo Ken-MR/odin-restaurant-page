@@ -2,29 +2,7 @@ import plate from './images/plate.png';
 
 export default function createHome () {
   console.log('I am creating the home page!');
-
-  /*
-    <div id="content">
-      <div id="nav">
-        <div>Home</div>
-        <div>Menu</div>
-        <div>Contact</div>
-      </div>
-      <div id="body">
-        <div id="header">
-          <img src="../src/plate.png">
-          <h1>Ken's Kitchen</h1>
-          <img src="../src/plate.png">
-        </div>
-        <div id="info">
-          <div>Description</div>
-          <div>Hours</div>
-          <div>Location</div>
-        </div>
-      </div>
-    </div>
-  */
-
+  
   const content = document.getElementById('content');
   const body = document.createElement('div');
   const nav = document.createElement('div');

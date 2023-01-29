@@ -98,7 +98,7 @@ export default function createMenu () {
 
   let description = document.createElement('p');
   let descriptionText = 
-  document.createTextNode('Two delicious skillet cooked slices; add two more for an extra $1.5');
+  document.createTextNode('Two delicious skillet cooked slices; add two more for $1.5');
   description.appendChild(descriptionText);
 
   let price_image = document.createElement('div');
@@ -117,10 +117,72 @@ export default function createMenu () {
   bacon_card.appendChild(description);
   bacon_card.appendChild(price_image);
 
+  // egg menu item
+
+  const egg_card = document.createElement('div');
+  egg_card.classList.add('menu-item');
+
+  itemName = document.createElement('h3');
+  itemNameText = document.createTextNode('Scrambled Eggs');
+  itemName.appendChild(itemNameText);
+
+  description = document.createElement('p');
+  descriptionText = 
+  document.createTextNode('Delectable fluffy eggs with chives');
+  description.appendChild(descriptionText);
+
+  price_image = document.createElement('div');
+  price = document.createElement('h3');
+  priceText = document.createTextNode('$2');
+  price.appendChild(priceText);
+
+  const eggImage = new Image();
+  eggImage.src = eggs;
+
+  price_image.classList.add('price-image');
+  price_image.appendChild(price);
+  price_image.appendChild(eggImage);
+
+  egg_card.appendChild(itemName);
+  egg_card.appendChild(description);
+  egg_card.appendChild(price_image);
+
+  // oatmeal menu item
+
+  const oat_card = document.createElement('div');
+  oat_card.classList.add('menu-item');
+
+  itemName = document.createElement('h3');
+  itemNameText = document.createTextNode('Oatmeal');
+  itemName.appendChild(itemNameText);
+
+  description = document.createElement('p');
+  descriptionText = 
+  document.createTextNode('Stee cut oats mixed with a nut medley; add fruit for $1');
+  description.appendChild(descriptionText);
+
+  price_image = document.createElement('div');
+  price = document.createElement('h3');
+  priceText = document.createTextNode('$2');
+  price.appendChild(priceText);
+
+  const oatImage = new Image();
+  oatImage.src = oatmeal;
+
+  price_image.classList.add('price-image');
+  price_image.appendChild(price);
+  price_image.appendChild(oatImage);
+
+  oat_card.appendChild(itemName);
+  oat_card.appendChild(description);
+  oat_card.appendChild(price_image);
+
   /* End Menu Item Cards */
 
   info.appendChild(side);
   info.appendChild(bacon_card);
+  info.appendChild(egg_card);
+  info.appendChild(oat_card);
   info.appendChild(entree);
   info.appendChild(drink);
 
