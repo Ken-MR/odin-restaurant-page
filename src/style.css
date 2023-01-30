@@ -1,3 +1,11 @@
+body {
+    background-color: lightgray !important;
+    height: 100vh;
+    width: 100vw;
+    padding: 10px;
+    color: white;
+}
+
 img {
     width: 150px;
     height: 150px;
@@ -19,8 +27,8 @@ img {
 
 #header, .menu_header {
     padding: 20px;
-    border: 5px solid #C0C0C0;
     background-color: slategrey;
+    border: 5px solid #C0C0C0; 
     border-radius: 20px;
 }
 
@@ -48,8 +56,8 @@ img {
 .nav_button {
     width: 80px;
     height: 30px;
-    border: 5px solid #C0C0C0;
-    background-color: darkgray;
+    border: 5px solid #c0c0c073;
+    background-color: rgba(68, 68, 68, 0.473);
     display: flex;
     flex-direction: column;
     justify-content: center;
