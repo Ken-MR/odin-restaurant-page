@@ -64,125 +64,98 @@ export default function createContact () {
 
   /* create contact cards */
 
+  const staff = [];
+
+  function staffmember (staffName, staffRole, staffNumber, staffEmail, staffPicture) {
+    this.staffName = staffName;
+    this.staffRole = staffRole;
+    this.staffNumber = staffNumber;
+    this.staffEmail = staffEmail;
+    this.staffPicture = staffPicture;  
+  }
+
   // manager contact card
-  const manager = document.createElement('div');
-  manager.classList.add('contact-item');
 
-  const managerInfo = document.createElement('div');
-  managerInfo.classList.add('contact-card');
-
-  let name = document.createElement('h2');
-  let nameText = document.createTextNode('Ken');
-  name.appendChild(nameText);
-
-  let managerContact = document.createElement('ul');
-
-  let managerRole = document.createElement('li');
-  let managerRoleText = document.createTextNode('Manager');
-  managerRole.appendChild(managerRoleText);
-
-  let managerNumber = document.createElement('li');
-  let managerNumberText = document.createTextNode('555-555-5555');
-  managerNumber.appendChild(managerNumberText);
-
-  let managerEmail = document.createElement('li');
-  let managerEmailText = document.createTextNode('ken@fakemail.com');
-  managerEmail.appendChild(managerEmailText);
-
-  managerContact.appendChild(managerRole);
-  managerContact.appendChild(managerNumber);
-  managerContact.appendChild(managerEmail);
-
-  managerInfo.appendChild(name);
-  managerInfo.appendChild(managerContact);
-
-  const managerPhoto = new Image();
-  managerPhoto.src = ken;
-
-  manager.appendChild(managerInfo);
-  manager.appendChild(managerPhoto);
+  staff.push(new staffmember(
+      'Ken',
+      'Manager',
+      '555-555-5555',
+      'ken@fakemail.com',
+      ken,
+    )
+  )
 
   // chef chef card
-  const chef = document.createElement('div');
-  chef.classList.add('contact-item');
 
-  const chefInfo = document.createElement('div');
-  chefInfo.classList.add('contact-card');
-
-  name = document.createElement('h2');
-  nameText = document.createTextNode('Luna');
-  name.appendChild(nameText);
-
-  let chefContact = document.createElement('ul');
-
-  let chefRole = document.createElement('li');
-  let chefRoleText = document.createTextNode('Chef');
-  chefRole.appendChild(chefRoleText);
-
-  let chefNumber = document.createElement('li');
-  let chefNumberText = document.createTextNode('555-555-5556');
-  chefNumber.appendChild(chefNumberText);
-
-  let chefEmail = document.createElement('li');
-  let chefEmailText = document.createTextNode('luna@fakemail.com');
-  chefEmail.appendChild(chefEmailText);
-
-  chefContact.appendChild(chefRole);
-  chefContact.appendChild(chefNumber);
-  chefContact.appendChild(chefEmail);
-
-  chefInfo.appendChild(name);
-  chefInfo.appendChild(chefContact);
-
-  const chefPhoto = new Image();
-  chefPhoto.src = luna;
-
-  chef.appendChild(chefInfo);
-  chef.appendChild(chefPhoto);
+  staff.push(new staffmember(
+      'Luna',
+      'Chef',
+      '555-555-5556',
+      'luna@fakemail.com',
+      luna,
+    )
+  )
 
   // waiter chef card
-  const waiter = document.createElement('div');
-  waiter.classList.add('contact-item');
 
-  const waiterInfo = document.createElement('div');
-  waiterInfo.classList.add('contact-card');
-
-  name = document.createElement('h2');
-  nameText = document.createTextNode('Sol');
-  name.appendChild(nameText);
-
-  let waiterContact = document.createElement('ul');
-
-  let waiterRole = document.createElement('li');
-  let waiterRoleText = document.createTextNode('Waiter');
-  waiterRole.appendChild(waiterRoleText);
-
-  let waiterNumber = document.createElement('li');
-  let waiterNumberText = document.createTextNode('555-555-5557');
-  waiterNumber.appendChild(waiterNumberText);
-
-  let waiterEmail = document.createElement('li');
-  let waiterEmailText = document.createTextNode('sol@fakemail.com');
-  waiterEmail.appendChild(waiterEmailText);
-
-  waiterContact.appendChild(waiterRole);
-  waiterContact.appendChild(waiterNumber);
-  waiterContact.appendChild(waiterEmail);
-
-  waiterInfo.appendChild(name);
-  waiterInfo.appendChild(waiterContact);
-
-  const waiterPhoto = new Image();
-  waiterPhoto.src = sol;
-
-  waiter.appendChild(waiterInfo);
-  waiter.appendChild(waiterPhoto);
+  staff.push(new staffmember(
+      'Sol',
+      'Waiter',
+      '555-555-5557',
+      'sol@fakemail.com',
+      sol,
+    )
+  )
 
   // append created name cards
-  info.appendChild(manager);
-  info.appendChild(chef);
-  info.appendChild(waiter);
+
+  for (let i = 0; i < staff.length; i++) {
+    info.appendChild(
+      generateContactCard (staff[i].staffName, staff[i].staffRole, staff[i].staffNumber, staff[i].staffEmail, staff[i].staffPicture
+    ));
+  }
 
   body.appendChild(header);
   body.appendChild(info);
+}
+
+function generateContactCard (nameText, roleText, numberText, emailText, picture) {
+  const card = document.createElement('div');
+  card.classList.add('contact-item');
+
+  const roleInfo = document.createElement('div');
+  roleInfo.classList.add('contact-card');
+
+  let name = document.createElement('h2');
+  let staffName = document.createTextNode(nameText);
+  name.appendChild(staffName);
+
+  let contactInfo = document.createElement('ul');
+
+  let role = document.createElement('li');
+  let staffRole = document.createTextNode(roleText);
+  role.appendChild(staffRole);
+
+  let number = document.createElement('li');
+  let staffNumber = document.createTextNode(numberText);
+  number.appendChild(staffNumber);
+
+  let email = document.createElement('li');
+  let staffEmail = document.createTextNode(emailText);
+  email.appendChild(staffEmail);
+
+  contactInfo.appendChild(role);
+  contactInfo.appendChild(number);
+  contactInfo.appendChild(email);
+
+  roleInfo.appendChild(name);
+  roleInfo.appendChild(contactInfo);
+
+  const photo = new Image();
+  photo.src = picture;
+
+  card.appendChild(roleInfo);
+  card.appendChild(photo);
+
+  return card;
 }
