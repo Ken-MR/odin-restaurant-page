@@ -56,8 +56,8 @@ img {
 .nav_button {
     width: 80px;
     height: 30px;
-    border: 5px solid #c0c0c073;
-    background-color: rgba(68, 68, 68, 0.473);
+    border: 5px solid #c0c0c0c2;
+    background-color: rgba(68, 68, 68, 0.11);
     display: flex;
     flex-direction: column;
     justify-content: center;

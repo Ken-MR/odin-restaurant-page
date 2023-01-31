@@ -87,96 +87,49 @@ export default function createMenu () {
 
   /* create menu item cards */
 
+  const menu = [];
+
+  function menuItem (itemName, itemDescription, itemPrice, itemImage, itemType) {
+    this.itemName = itemName;
+    this.itemDescription = itemDescription;
+    this.itemPrice = itemPrice;
+    this.itemImage = itemImage;
+    this.itemType = itemType;  
+  }
+
   // bacon menu item
 
-  const bacon_card = document.createElement('div');
-  bacon_card.classList.add('menu-item');
-
-  let itemName = document.createElement('h3');
-  let itemNameText = document.createTextNode('Bacon');
-  itemName.appendChild(itemNameText);
-
-  let description = document.createElement('p');
-  let descriptionText = 
-  document.createTextNode('Two delicious skillet cooked slices; add two more for $1.5');
-  description.appendChild(descriptionText);
-
-  let price_image = document.createElement('div');
-  let price = document.createElement('h3');
-  let priceText = document.createTextNode('$2');
-  price.appendChild(priceText);
-
-  const baconImage = new Image();
-  baconImage.src = bacon;
-
-  price_image.classList.add('price-image');
-  price_image.appendChild(price);
-  price_image.appendChild(baconImage);
-
-  bacon_card.appendChild(itemName);
-  bacon_card.appendChild(description);
-  bacon_card.appendChild(price_image);
+  menu.push(new menuItem(
+    'Bacon',
+    'Two delicious skillet cooked slices; add two more for $1.5',
+    '$2',
+    bacon,
+    'side',
+    )
+  )
 
   // egg menu item
 
-  const egg_card = document.createElement('div');
-  egg_card.classList.add('menu-item');
-
-  itemName = document.createElement('h3');
-  itemNameText = document.createTextNode('Scrambled Eggs');
-  itemName.appendChild(itemNameText);
-
-  description = document.createElement('p');
-  descriptionText = 
-  document.createTextNode('Delectable fluffy eggs with chives');
-  description.appendChild(descriptionText);
-
-  price_image = document.createElement('div');
-  price = document.createElement('h3');
-  priceText = document.createTextNode('$2');
-  price.appendChild(priceText);
-
-  const eggImage = new Image();
-  eggImage.src = eggs;
-
-  price_image.classList.add('price-image');
-  price_image.appendChild(price);
-  price_image.appendChild(eggImage);
-
-  egg_card.appendChild(itemName);
-  egg_card.appendChild(description);
-  egg_card.appendChild(price_image);
+  menu.push(new menuItem(
+    'Scrambled Eggs',
+    'Delectable fluffy eggs with chives',
+    '$2',
+    eggs,
+    'side',
+    )
+  )
 
   // oatmeal menu item
 
-  const oat_card = document.createElement('div');
-  oat_card.classList.add('menu-item');
-
-  itemName = document.createElement('h3');
-  itemNameText = document.createTextNode('Oatmeal');
-  itemName.appendChild(itemNameText);
-
-  description = document.createElement('p');
-  descriptionText = 
-  document.createTextNode('Steel cut oats mixed with a nut medley; add fruit for $1');
-  description.appendChild(descriptionText);
-
-  price_image = document.createElement('div');
-  price = document.createElement('h3');
-  priceText = document.createTextNode('$2');
-  price.appendChild(priceText);
-
-  const oatImage = new Image();
-  oatImage.src = oatmeal;
-
-  price_image.classList.add('price-image');
-  price_image.appendChild(price);
-  price_image.appendChild(oatImage);
-
-  oat_card.appendChild(itemName);
-  oat_card.appendChild(description);
-  oat_card.appendChild(price_image);
-
+  menu.push(new menuItem(
+    'Oatmeal',
+    'Steel cut oats mixed with a nut medley; add fruit for $1',
+    '$2',
+    oatmeal,
+    'side',
+    )
+  )
+/*
   // pancakes menu item
 
   const pancake_card = document.createElement('div');
@@ -416,11 +369,13 @@ export default function createMenu () {
   smoothie_card.appendChild(itemName);
   smoothie_card.appendChild(description);
   smoothie_card.appendChild(price_image);  
-
+*/
   /* End Menu Item Cards */
 
-  info.appendChild(side);
-  info.appendChild(bacon_card);
+  //info.appendChild(side);
+  //info.appendChild(generateMenuCard(baconName, descriptionText, price, baconImage));
+
+ /* info.appendChild(bacon_card);
   info.appendChild(egg_card);
   info.appendChild(oat_card);
 
@@ -435,7 +390,49 @@ export default function createMenu () {
   info.appendChild(orange_card);  
   info.appendChild(lemon_card);  
   info.appendChild(smoothie_card);   
+*/
+
+info.appendChild(side);
+
+for (let i = 0; i < menu.length; i++) {
+  info.appendChild(generateMenuCard(
+    menu[i].itemName, 
+    menu[i].itemDescription, 
+    menu[i].itemPrice, 
+    menu[i].itemImage
+  ));
+}
 
   body.appendChild(header);
   body.appendChild(info);
+}
+
+function generateMenuCard(nameText, descriptionText, priceText, picture) {
+  const card = document.createElement('div');
+  card.classList.add('menu-item');
+
+  let item = document.createElement('h3');
+  let itemName = document.createTextNode(nameText);
+  item.appendChild(itemName);
+
+  let description = document.createElement('p');
+  let itemDescription = document.createTextNode(descriptionText);
+  description.appendChild(itemDescription);
+
+  let price_image = document.createElement('div');
+  let price = document.createElement('h3');
+  let itemPrice = document.createTextNode(priceText);
+  price.appendChild(itemPrice);
+
+  const image = new Image();
+  image.src = picture;
+
+  price_image.classList.add('price-image');
+  price_image.appendChild(price);
+  price_image.appendChild(image);
+
+  card.appendChild(item);
+  card.appendChild(description);
+  card.appendChild(price_image);
+  return card;
 }
