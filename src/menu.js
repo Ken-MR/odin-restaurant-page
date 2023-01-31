@@ -129,282 +129,124 @@ export default function createMenu () {
     'side',
     )
   )
-/*
+
   // pancakes menu item
 
-  const pancake_card = document.createElement('div');
-  pancake_card.classList.add('menu-item');
-
-  itemName = document.createElement('h3');
-  itemNameText = document.createTextNode('Pancakes');
-  itemName.appendChild(itemNameText);
-
-  description = document.createElement('p');
-  descriptionText = 
-  document.createTextNode('Four delicious fluffy pancakes, served with syrup and fruit');
-  description.appendChild(descriptionText);
-
-  price_image = document.createElement('div');
-  price = document.createElement('h3');
-  priceText = document.createTextNode('$6');
-  price.appendChild(priceText);
-
-  const pancakeImage = new Image();
-  pancakeImage.src = pancakes;
-
-  price_image.classList.add('price-image');
-  price_image.appendChild(price);
-  price_image.appendChild(pancakeImage);
-
-  pancake_card.appendChild(itemName);
-  pancake_card.appendChild(description);
-  pancake_card.appendChild(price_image);
+  menu.push(new menuItem(
+    'Pancakes',
+    'Four delicious fluffy pancakes, served with syrup and fruit',
+    '$6',
+    pancakes,
+    'entree',
+    )
+  )
 
   // waffles menu item
 
-  const waffle_card = document.createElement('div');
-  waffle_card.classList.add('menu-item');
-
-  itemName = document.createElement('h3');
-  itemNameText = document.createTextNode('Loaded Waffle');
-  itemName.appendChild(itemNameText);
-
-  description = document.createElement('p');
-  descriptionText = 
-  document.createTextNode('A melt in your mouth waffle, served with fruit and whipped cream');
-  description.appendChild(descriptionText);
-
-  price_image = document.createElement('div');
-  price = document.createElement('h3');
-  priceText = document.createTextNode('$6');
-  price.appendChild(priceText);
-
-  const waffleImage = new Image();
-  waffleImage.src = waffles;
-
-  price_image.classList.add('price-image');
-  price_image.appendChild(price);
-  price_image.appendChild(waffleImage);
-
-  waffle_card.appendChild(itemName);
-  waffle_card.appendChild(description);
-  waffle_card.appendChild(price_image);
+  menu.push(new menuItem(
+    'Loaded Waffle',
+    'A melt in your mouth waffle, served with fruit and whipped cream',
+    '$6',
+    waffles,
+    'entree',
+    )
+  )
 
   // breakfast sandwich menu item
 
-  const sandwich_card = document.createElement('div');
-  sandwich_card.classList.add('menu-item');
-
-  itemName = document.createElement('h3');
-  itemNameText = document.createTextNode('Breakfast Sandwich');
-  itemName.appendChild(itemNameText);
-
-  description = document.createElement('p');
-  descriptionText = 
-  document.createTextNode('Bacon, eggs, and sausage served on your choice of toast, muffin, or bagel ($1 extra)');
-  description.appendChild(descriptionText);
-
-  price_image = document.createElement('div');
-  price = document.createElement('h3');
-  priceText = document.createTextNode('$5');
-  price.appendChild(priceText);
-
-  const sandwichImage = new Image();
-  sandwichImage.src = sandwich;
-
-  price_image.classList.add('price-image');
-  price_image.appendChild(price);
-  price_image.appendChild(sandwichImage);
-
-  sandwich_card.appendChild(itemName);
-  sandwich_card.appendChild(description);
-  sandwich_card.appendChild(price_image); 
+  menu.push(new menuItem(
+    'Breakfast Sandwich',
+    'Bacon, eggs, and sausage served on your choice of toast, muffin, or bagel ($1 extra)',
+    '$5',
+    sandwich,
+    'entree',
+    )
+  )
   
   // english breakfast menu item
 
-  const english_card = document.createElement('div');
-  english_card.classList.add('menu-item');
-
-  itemName = document.createElement('h3');
-  itemNameText = document.createTextNode('English Breakfast');
-  itemName.appendChild(itemNameText);
-
-  description = document.createElement('p');
-  descriptionText = 
-  document.createTextNode('A full English breakfast, including bacon, eggs, sausage, two slices of toast, hashbrown, and cup of beans');
-  description.appendChild(descriptionText);
-
-  price_image = document.createElement('div');
-  price = document.createElement('h3');
-  priceText = document.createTextNode('$9');
-  price.appendChild(priceText);
-
-  const englishImage = new Image();
-  englishImage.src = english;
-
-  price_image.classList.add('price-image');
-  price_image.appendChild(price);
-  price_image.appendChild(englishImage);
-
-  english_card.appendChild(itemName);
-  english_card.appendChild(description);
-  english_card.appendChild(price_image);
+  menu.push(new menuItem(
+    'English Breakfast',
+    'A full English breakfast, including bacon, eggs, sausage, two slices of toast, hashbrown, and cup of beans',
+    '$9',
+    english,
+    'entree',
+    )
+  )
 
   // valentine's toast menu item
 
-  const valentine_card = document.createElement('div');
-  valentine_card.classList.add('menu-item');
-
-  itemName = document.createElement('h3');
-  itemNameText = document.createTextNode('Valentine Toast');
-  itemName.appendChild(itemNameText);
-
-  description = document.createElement('p');
-  descriptionText = 
-  document.createTextNode('A special treat for you and your special someone; two slices of toast including sunny side up eggs and bacon; available all through February');
-  description.appendChild(descriptionText);
-
-  price_image = document.createElement('div');
-  price = document.createElement('h3');
-  priceText = document.createTextNode('$10');
-  price.appendChild(priceText);
-
-  const valentineImage = new Image();
-  valentineImage.src = valentine;
-
-  price_image.classList.add('price-image');
-  price_image.appendChild(price);
-  price_image.appendChild(valentineImage);
-
-  valentine_card.appendChild(itemName);
-  valentine_card.appendChild(description);
-  valentine_card.appendChild(price_image);
+  menu.push(new menuItem(
+    'Valentine Toast',
+    'A special treat for you and your special someone; two slices of toast including sunny side up eggs and bacon; available all through February',
+    '$10',
+    valentine,
+    'entree',
+    )
+  )
 
   // orange juice menu item
 
-  const orange_card = document.createElement('div');
-  orange_card.classList.add('menu-item');
-
-  itemName = document.createElement('h3');
-  itemNameText = document.createTextNode('Orange Juice');
-  itemName.appendChild(itemNameText);
-
-  description = document.createElement('p');
-  descriptionText = 
-  document.createTextNode('A glass of orange juice, tangy and guaranteed to quench a thirst');
-  description.appendChild(descriptionText);
-
-  price_image = document.createElement('div');
-  price = document.createElement('h3');
-  priceText = document.createTextNode('$2');
-  price.appendChild(priceText);
-
-  const orangeImage = new Image();
-  orangeImage.src = orange;
-
-  price_image.classList.add('price-image');
-  price_image.appendChild(price);
-  price_image.appendChild(orangeImage);
-
-  orange_card.appendChild(itemName);
-  orange_card.appendChild(description);
-  orange_card.appendChild(price_image);
+  menu.push(new menuItem(
+    'Orange Juice',
+    'A glass of orange juice, tangy and guaranteed to quench a thirst',
+    '$2',
+    orange,
+    'drink',
+    )
+  )
 
   // lemon-lime menu item
 
-  const lemon_card = document.createElement('div');
-  lemon_card.classList.add('menu-item');
-
-  itemName = document.createElement('h3');
-  itemNameText = document.createTextNode('Lemon-limeade');
-  itemName.appendChild(itemNameText);
-
-  description = document.createElement('p');
-  descriptionText = 
-  document.createTextNode('Freshly squeezed lemon and lime in a delicious sour mix');
-  description.appendChild(descriptionText);
-
-  price_image = document.createElement('div');
-  price = document.createElement('h3');
-  priceText = document.createTextNode('$2');
-  price.appendChild(priceText);
-
-  const lemonImage = new Image();
-  lemonImage.src = lemon;
-
-  price_image.classList.add('price-image');
-  price_image.appendChild(price);
-  price_image.appendChild(lemonImage);
-
-  lemon_card.appendChild(itemName);
-  lemon_card.appendChild(description);
-  lemon_card.appendChild(price_image);  
+  menu.push(new menuItem(
+    'Lemon-limeade',
+    'Freshly squeezed lemon and lime in a delicious sour mix',
+    '$2',
+    lemon,
+    'drink',
+    )
+  )
 
   // smoothie menu item
 
-  const smoothie_card = document.createElement('div');
-  smoothie_card.classList.add('menu-item');
+  menu.push(new menuItem(
+    'Fruit Smoothie',
+    'A mixed berry smoothie to excite your tastebuds',
+    '$3',
+    smoothie,
+    'drink',
+    )
+  )
 
-  itemName = document.createElement('h3');
-  itemNameText = document.createTextNode('Fruit Smoothie');
-  itemName.appendChild(itemNameText);
-
-  description = document.createElement('p');
-  descriptionText = 
-  document.createTextNode('A mixed berry smoothie to excite your tastebuds');
-  description.appendChild(descriptionText);
-
-  price_image = document.createElement('div');
-  price = document.createElement('h3');
-  priceText = document.createTextNode('$3');
-  price.appendChild(priceText);
-
-  const smoothieImage = new Image();
-  smoothieImage.src = smoothie;
-
-  price_image.classList.add('price-image');
-  price_image.appendChild(price);
-  price_image.appendChild(smoothieImage);
-
-  smoothie_card.appendChild(itemName);
-  smoothie_card.appendChild(description);
-  smoothie_card.appendChild(price_image);  
-*/
   /* End Menu Item Cards */
 
-  //info.appendChild(side);
-  //info.appendChild(generateMenuCard(baconName, descriptionText, price, baconImage));
+  info.appendChild(side);
 
- /* info.appendChild(bacon_card);
-  info.appendChild(egg_card);
-  info.appendChild(oat_card);
+  generateSection(info, menu, 'side');
 
   info.appendChild(entree);
-  info.appendChild(pancake_card);
-  info.appendChild(waffle_card);
-  info.appendChild(sandwich_card);
-  info.appendChild(english_card);
-  info.appendChild(valentine_card); 
+
+  generateSection(info, menu, 'entree');
 
   info.appendChild(drink);
-  info.appendChild(orange_card);  
-  info.appendChild(lemon_card);  
-  info.appendChild(smoothie_card);   
-*/
 
-info.appendChild(side);
-
-for (let i = 0; i < menu.length; i++) {
-  info.appendChild(generateMenuCard(
-    menu[i].itemName, 
-    menu[i].itemDescription, 
-    menu[i].itemPrice, 
-    menu[i].itemImage
-  ));
-}
+  generateSection(info, menu, 'drink');
 
   body.appendChild(header);
   body.appendChild(info);
+}
+
+function generateSection (info, menu, section) {
+  for (let i = 0; i < menu.length; i++) {
+    if (menu[i].itemType === section) {
+      info.appendChild(generateMenuCard(
+        menu[i].itemName, 
+        menu[i].itemDescription, 
+        menu[i].itemPrice, 
+        menu[i].itemImage
+      ));
+    }
+  }
 }
 
 function generateMenuCard(nameText, descriptionText, priceText, picture) {
